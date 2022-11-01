@@ -1,0 +1,23 @@
+//select id FROM Account
+//select id, name, MailingCity FROM Contact Where MailingCity = 'Paris'
+SELECT Id, Name, MailingCity FROM Contact WHERE Name LIKE 'A%' 
+SELECT Id, Name, MailingCity FROM Contact WHERE Name LIKE '%A'
+SELECT Id, Name, MailingCity FROM Contact WHERE Name LIKE '%A%'
+
+SELECT id, name, CreatedDate FROM Account ORDER BY CreatedDate DESC LIMIT 3
+
+SELECT COUNT() FROM Contact
+SELECT COUNT(ID) FROM Contact
+SELECT COUNT(MailingCity) FROM Contact
+
+SELECT Id, Name, Phone FROM Account WHERE phone != NULL
+
+SELECT id, Name, Phone,  AccountNumber FROM Account WHERE Phone != NULL AND AccountNumber != NULL
+
+SELECT id, name,Phone FROM Account WHERE(Phone != NULL OR Website != NULL) AND AccountNumber != NULL
+SELECT id, name,Phone FROM Account WHERE Phone != NULL OR (Website != NULL AND AccountNumber != NULL)
+
+
+SELECT Id, Name, Account.Name FROM Contact WHERE Account.Industry = 'Energy' 
+
+SELECT Id, Name, (SELECT lastName FROM Contacts) FROM Account

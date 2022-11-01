@@ -1,0 +1,25 @@
+//TASK3-
+//1-Fetch all the opportunities which have stage as Closed Won
+ //and Amount more than or equal to 35000
+ select name, StageName, Amount FROM Opportunity WHERE stageName = 'Closed Won' AND Amount >=35000
+
+
+ //2-Fetch all the contacts and their related Account Name, order them by the contact’s last name in
+select id, name,lastname, Account.name from Contact  order By LastName desc
+
+
+
+//3-Fetch all the Accounts along with their related Opportunities with StageName other than Closed Lost
+
+select id,name,(select name, amount, stageName from opportunities where stageName != 'Closed Lost'FROM Account
+
+
+//4-Find the Top 10 opportunities based on Amount value.
+select id, name,amount from opportunity order by amount desc limit 10
+
+
+
+//5-Find lower 20 opportunities based on Amount value which are not set 
+//to Closed Won and not to Closed Lost stage.
+select id, name, stageName, amount from opportunity where 
+stageName != 'Colsed Won' and  stageName != 'Colsed Won' order by amount  limit 20

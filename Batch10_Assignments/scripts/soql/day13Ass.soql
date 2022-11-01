@@ -1,0 +1,6 @@
+SELECT AVG(NumberOfEmployees) FROM Account
+
+select AVG(NumberOfEmployees) FROM Account  Group by Industry
+
+
+

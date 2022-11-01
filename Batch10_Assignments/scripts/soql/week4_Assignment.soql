@@ -1,0 +1,17 @@
+
+//TASK1  SOQL – Basic Select Queries
+
+//1-Fetch Account Id, Contact First Name, Contact Last Name and Email Address for all the contacts
+//present in your org
+select AccountId, FirstName, LastName,email from Contact
+
+//2-Fetch all the accounts which have no Phone number populated and order them based on the
+//Account Name in the ascending order
+select id, name, phone from account where phone != null order by name
+
+//3-Find all contacts which have no account attached to them.
+select id, name from contact where accountId != null
+
+//4-Find out the count of all opportunities present in the Org.
+select count() from opportunity
+//---------------------------------------------------
